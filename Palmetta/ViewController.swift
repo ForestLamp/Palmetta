@@ -11,19 +11,15 @@ import WebKit
 
 class ViewController: UIViewController, WKUIDelegate {
     
-    // Оутлет для вебВью
     
     @IBOutlet var mainVebView: WKWebView!
     
-    
-
-        override func loadView() {
+    override func loadView() {
             let webConfiguration = WKWebViewConfiguration()
             mainVebView = WKWebView(frame: .zero, configuration: webConfiguration)
             webConfiguration.allowsInlineMediaPlayback = true
             mainVebView.uiDelegate = self
             view = mainVebView
-            
     }
     
         override func viewDidLoad() {
