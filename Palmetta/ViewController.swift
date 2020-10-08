@@ -6,14 +6,38 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+class ViewController: UIViewController, WKUIDelegate {
+    
+    // Оутлет для вебВью
+    
+    @IBOutlet var mainVebView: WKWebView!
+    
+    
+
+        override func loadView() {
+            let webConfiguration = WKWebViewConfiguration()
+            mainVebView = WKWebView(frame: .zero, configuration: webConfiguration)
+            webConfiguration.allowsInlineMediaPlayback = true
+            mainVebView.uiDelegate = self
+            view = mainVebView
+            
+    }
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let url = URL(string: "https://www.palmetta.ru")
+               let request = URLRequest(url: url!)
+               
+               mainVebView.load(request)
+               mainVebView.allowsBackForwardNavigationGestures = true
+        
     }
 
 
-}
 
+
+}

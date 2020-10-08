@@ -13,6 +13,8 @@
 		CECE11BA252B83E1002EA19D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECE11B8252B83E1002EA19D /* Main.storyboard */; };
 		CECE11BC252B83E5002EA19D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECE11BB252B83E5002EA19D /* Assets.xcassets */; };
 		CECE11BF252B83E5002EA19D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECE11BD252B83E5002EA19D /* LaunchScreen.storyboard */; };
+		CECE11CA252B8A48002EA19D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECE11C9252B8A48002EA19D /* WebKit.framework */; };
+		CECE11CD252B8A53002EA19D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECE11CC252B8A53002EA19D /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CECE11BB252B83E5002EA19D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECE11BE252B83E5002EA19D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECE11C0252B83E5002EA19D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECE11C9252B8A48002EA19D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CECE11CC252B8A53002EA19D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECE11CD252B8A53002EA19D /* WebKit.framework in Frameworks */,
+				CECE11CA252B8A48002EA19D /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 			children = (
 				CECE11B1252B83E1002EA19D /* Palmetta */,
 				CECE11B0252B83E1002EA19D /* Products */,
+				CECE11C8252B8A48002EA19D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +72,15 @@
 				CECE11C0252B83E5002EA19D /* Info.plist */,
 			);
 			path = Palmetta;
+			sourceTree = "<group>";
+		};
+		CECE11C8252B8A48002EA19D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CECE11CC252B8A53002EA19D /* WebKit.framework */,
+				CECE11C9252B8A48002EA19D /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8KHXL86W5;
 				INFOPLIST_FILE = Palmetta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,6 +313,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.palmetta.Palmetta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -308,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8KHXL86W5;
 				INFOPLIST_FILE = Palmetta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +337,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.palmetta.Palmetta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
